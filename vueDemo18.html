@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据绑定，实现双向绑定元素</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="myApp">
+    <h1>表单控件绑定</h1>
+    <input type="text" v-model="message" placeholder="来呀，编辑我吧">
+    <p>{{message}}</p>
+</div>
+</body>
+<script>
+    new Vue({
+        el:'#myApp',
+        data:{
+            message:"我爱马里奥",
+        },
+        methods:{},
+    });
+</script>
+</html>

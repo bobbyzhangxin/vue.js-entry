@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class对象绑定</title>
+    <script src="https://unpkg.com/vue"></script>
+<style>
+    .active{
+        color:red;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .big{
+        color:blue;
+        font-size:40px;
+        font-weight: normal;
+    }
+</style>
+</head>
+<body>
+    <div id="myApp">
+        <div v-bind:class="myclass">还不错哟</div>
+        <button @click="btnClick">点击更换样式</button>
+
+    </div>
+</body>
+<script>
+    new Vue({
+        el:'#myApp',
+        data:{
+            myclass:{
+                active:true,
+                big:false
+            }
+        },
+        methods:{
+            btnClick:function () {
+                this.myclass.big=!this.myclass.big;
+            }
+        }
+    })
+</script>
+</html>

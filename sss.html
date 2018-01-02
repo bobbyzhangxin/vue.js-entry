@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://unpkg.com/vue"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var vm = new Vue({
+                el: '#box',
+                data: {
+                    url:'2.jpg',
+                    w100:'100px',
+                    title:"这是图片"
+                },
+                methods:{
+                    btnClick:function () {
+                        this.url=("3.jpg");
+                        this.w100='200px';
+
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <img v-bind:src="url" v-bind:width="w100" v-bind:title="title">
+    <img :src="url" :width="w100" :title="title">
+    <button @click="btnClick">改变图片</button>
+</div>
+</body>
+</html>

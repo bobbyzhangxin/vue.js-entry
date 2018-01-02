@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class绑定</title>
+    <script src="https://unpkg.com/vue"></script>
+    <style>
+        .active{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div id="myApp">
+        <div v-bind:class="{active:isActive}">文本</div>
+        <div :class="{active:isActive}">文本</div>
+        <button @click="btnClick">改变class</button>
+    </div>
+
+</body>
+<script>
+    new Vue({
+        el:'#myApp',
+        data:{
+            isActive:true,
+        },
+    methods:{
+        btnClick:function () {
+            this.isActive=!this.isActive;
+        }
+    ,
+    },
+    });
+</script>
+</html>

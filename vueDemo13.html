@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>条件渲染</title>
+        <script src="https://unpkg.com/vue"></script>
+
+</head>
+<body>
+    <div id="myApp">
+        <div v-if="result==''">成绩未公布</div>
+        <div v-else-if="result<60">{{result}} 成绩不及格</div>
+        <div v-else-if="result<80">{{result}} 成绩良</div>
+        <div v-else-if="result>90">{{result}} 成绩优秀</div>
+        <button @click="btnClick">点击出成绩</button>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:'#myApp',
+        data:{
+            result:0
+        },
+        methods:{
+            btnClick:function () {
+                this.result=Math.round(Math.random()*100);
+            }
+        }
+    })
+</script>
+</html>

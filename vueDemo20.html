@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单单选按钮</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="myApp">
+        <h1>表单单选按钮</h1>
+        <h3>输入你的姓名</h3>
+        <input type="text" v-model="message">
+        <h3>选择性别</h3>
+        <input type="radio"id="male"value="男"v-model="pickedSex">
+        <label for="male">男</label>
+        <input type="radio"id="female"value="女"v-model="pickedSex">
+        <label for="male">女</label>
+        <h3>选择爱好</h3>
+        <input type="radio"id="game"value="玩游戏"v-model="pickedHobby">
+        <label for="game">玩游戏</label>
+        <input type="radio"id="moive"value="看电影"v-model="pickedHobby">
+        <label for="game">看电影</label>
+        <h3>选择结果</h3>
+        <p>姓名：{{message}}</p>
+        <p>性别：{{pickedSex}}</p>
+        <p>爱好：{{pickedHobby}}</p>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:'#myApp',
+        data:{
+            message:'',
+            pickedSex:'',
+            pickedHobby:''
+        },
+    });
+</script>
+</html>

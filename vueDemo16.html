@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS对象迭代</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="myApp">
+        <div v-for="(value,key) in myMusic">
+            {{key}}:{{value}}
+        </div>
+    </div>
+
+</body>
+<script>
+    new Vue({
+        el:'#myApp',
+        data:{
+            myMusic:{
+                title:"rihanna",
+                country:"巴巴多斯",
+                job:"singer",
+                music:"S&M",
+                age:30
+            },
+        },
+    });
+</script>
+</html>

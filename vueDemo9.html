@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>观察属性 $watch 修改数据</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="myApp">
+        <p>今年3月3日发布的任天堂新一代的switch的价格是：{{price}}日元,含税价格：{{priceInTax}}日元,折合人名币：{{priceChinaRMB}}元</p>
+        <button @click="btnClick(10000)">加价10000日元</button>
+    </div>
+
+</body>
+<script>
+    var myApp=new Vue({
+        el:'#myApp',
+        data:{
+            price:0,
+            priceInTax:0,
+            priceChinaRMB:0
+        },
+        watch:{
+            price:function (newVal,oldVal) {
+                console.log(newVal,oldVal);
+                this.priceInTax=Math.round(this.price*1.08);
+                this.priceChinaRMB=Math.round(this.priceInTax/16.75);
+
+                },
+            },
+        methods:{
+            btnClick:function (newPrice) {
+                this.price+=newPrice;
+                },
+            },
+
+    });
+    myApp.price=29980;
+</script>
+</html>

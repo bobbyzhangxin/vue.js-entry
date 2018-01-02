@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>filters过滤器</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="myApp">
+        <p>{{message}}</p>
+        <p>将文本改为大写{{message | toupper}}</p>
+        <p>输入的数值转为百分比{{num | topercentage}}</p>
+    </div>
+</body>
+<script>
+    var myApp=new Vue({
+        el:'#myApp',
+        data:{
+            message:"hello zhangxin",
+            num:0.3
+        },
+        filters:{
+            toupper:function (value) {
+                return value.toUpperCase();
+            },
+            topercentage:function (value) {
+                return value*100+"%";
+            },
+        },
+
+    });
+</script>
+</html>

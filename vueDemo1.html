@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://unpkg.com/vue"></script>
+<body>
+    <div id="app-5">
+       <p>before:"{{message }}"</p>
+       <p>after:"{{reversedMessage}}"</p>
+    </div>
+    <div id="demo">
+        {{fullName}}
+
+    </div>
+</body>
+<script>
+    var vm=new Vue({
+        el:'#app-5',
+        data: {
+            message: "hello"
+
+        },
+        computed:{
+            reversedMessage:function () {
+                return this.message.split('').reverse().join('')
+            }
+        }
+    })
+    var demo=new Vue({
+        el:'#demo',
+        data:{
+            firstName:'Foo',
+            lastName:'Bar',
+        },
+        computed:{
+            fullName:function () {
+                return this.firstName+' '+this.lastName
+            }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件component</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="myApp">
+        <today-weather></today-weather>
+    </div>
+</body>
+<script>
+    Vue.component("today-weather",{
+        template:'<div>今天下雨，出不去啦，干什么呢？看我吧！</div>'
+    });
+    var myApp=new Vue({
+        el:'#myApp',
+
+    })
+</script>
+</html>

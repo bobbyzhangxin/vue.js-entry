@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-show元素显示</title>
+    <script src="https://unpkg.com/vue"></script>
+
+
+</head>
+<body>
+<div id="myApp">
+    <p v-show=" result ">显示成绩</p>
+    <button @click="btnClick">点击切换</button>
+</div>
+</body>
+<script>
+    new Vue({
+        el:'#myApp',
+        data:{
+            result:true
+        },
+        methods:{
+            btnClick:function () {
+                this.result=!this.result;
+            }
+        }
+    })
+</script>
+</html>

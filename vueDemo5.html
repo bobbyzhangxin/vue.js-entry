@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="myApp">
+        <p>你喜欢的是：{{mySong}}</p>
+        <button @click="btnClick('take a bow')">take a bow</button>
+        <button @click="btnClick('unbrella')">unbrella</button>
+        <button @click="btnClick('unfaithful')">unfaithful</button>
+        <button @click="btnClick('S&M')">S&M</button>
+    </div>
+</body>
+<script>
+    var myApp=new Vue({
+        el:'#myApp',
+        data:{
+            mySong:'take a bow'
+        },
+        methods:{
+            btnClick:function (pname) {
+                this.mySong=pname;
+            },
+        },
+    });
+</script>
+</html>

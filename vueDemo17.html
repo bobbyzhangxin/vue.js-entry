@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件处理器</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="myApp">
+    <input id="txtName1" class="txtName" v-on:keyup="txtKeyup($event)">
+    <button id="btn1"class="btn" v-on:click="btnClick($event)">OK</button>
+</div>
+</body>
+<script>
+    new Vue({
+        el:'#myApp',
+        data:{},
+        methods:{
+            txtKeyup:function (event) {
+                this.debugLog(event);
+            },
+            btnClick:function (event) {
+                this.debugLog(event);
+            },
+            debugLog:function (event) {
+                console.log(
+                    event.srcElement.tagName,
+                    event.srcElement.id,
+                    event.srcElement.innerHTML,
+                    event.key?event.key:''
+                );
+            },
+
+        },
+    });
+</script>
+</html>

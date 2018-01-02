@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for列表渲染</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="myApp">
+        <ul>
+            <li v-for="(music,index) in musics">({{index}}) {{music.title}} / 歌单：{{music.list}}</li>
+        </ul>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:'#myApp',
+        data:{
+            musics:[
+                {title:"rihanna",list:"take a bow"},
+                {title:"rihanna",list:"S&M"},
+                {title:"rihanna",list:"unfaithful"},
+
+            ]
+        },
+    });
+</script>
+</html>

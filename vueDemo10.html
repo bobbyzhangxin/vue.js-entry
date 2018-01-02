@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设置计算属性 computed(被计算的，处理过的)</title>
+    <script src="https://unpkg.com/vue"></script>
+    <!--处理元数据，便于二次利用，（比如：消费税自助计算机，原始数据在计算出二次数据）-->
+</head>
+<body>
+    <div id="myApp">
+        今年3月3日发布的任天堂新一代的switch的价格是：{{price}}日元,含税价格：{{priceInTax}}日元,折合人名币：{{priceChinaRMB}}元
+        <button @click="btnClick(10800)">含税价格改为10800日元</button>
+    </div>
+</body>
+<script>
+    var myApp=new Vue({
+        el:'#myApp',
+        data:{
+            price:29980
+        },
+        computed:{
+            priceInTax: {
+                get: function () {
+                    return this.price * 1.08;
+                },
+                set: function (value) {
+                    this.price = value / 1.08;
+                },
+            },
+            priceChinaRMB:function () {
+                return Math.round(this.priceInTax/16.75);
+            },
+        },
+        methods:{
+                btnClick:function (newPrice) {
+                    this.priceInTax=newPrice;
+                },
+
+        },
+    });
+</script>
+</html>

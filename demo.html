@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <span id="txt">0</span>
+    <button id="btn"onclick="show()">累加</button>
+</body>
+<script>
+    var btn;
+    var txt;
+    var num=0;
+    window.onload=function () {
+        txt=document.getElementById('txt');
+        btn=document.getElementById('btn');
+        if(sessionStorage.num){
+            num=sessionStorage.num;
+        }
+        btn.onclick=function () {
+            ++num;
+            sessionStorage.num=num;
+            show();
+        }
+    }
+    function show() {
+        txt.innerHTML=num;
+    }
+
+</script>
+</html>

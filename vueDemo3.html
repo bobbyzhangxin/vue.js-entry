@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<style>
+    table,th,td{
+        border:1px solid green;
+    }
+    th{
+        background-color: bisque;
+
+    }
+    td{
+        color:darkslategray;
+    }
+</style>
+<body>
+    <div id="app">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Sex</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr v-for="person in people">
+                    <td>{{person.name}}</td>
+                    <td>{{person.age}}</td>
+                    <td>{{person.sex}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+    var vm=new Vue({
+        el:"#app",
+        data:{
+            people:[
+                {
+                name:'jack',
+                age:30,
+                sex:'male'
+            },{
+               name:'bobby',
+               age:'28',
+               sex:'male'
+            },{
+                name:'lily',
+                age:20,
+                sex:'female'
+                },{
+                name:'chris',
+                age:'29',
+                sex:'male'
+                }
+            ]
+        }
+    })
+</script>
+</html>

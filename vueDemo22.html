@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单修饰符</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="myApp">
+    <h3>用户注册</h3>
+    <div>
+        <label for="username">用户：</label>
+        <input type="text"id="username"v-model.lazy="username"@change="checkUserName">
+        <span v-if="checkUserNameOk">可注册</span>
+    </div>
+    <div>
+        <label for="age">年龄：</label>
+        <input type="number"id="age"v-model.number="age">
+    </div>
+    <div>
+        <label for="content">个人简介：</label><br/>
+        <textarea id="content" v-model.trim="content"cols="55"rows="8"></textarea>
+
+    </div>
+    <h4>信息区</h4>
+    <p>{{username}}</p>
+    <p>{{age}}</p>
+    <p><pre>{{content}}</pre></p>
+</div>
+</body>
+<script>
+    var myApp=new Vue({
+        el:'#myApp',
+        data:{
+            username:'',
+            checkUserNameOk:false,
+            age:'',
+            content:''
+        },
+        methods:{
+            checkUserName:function () {
+                if(this.username.length>0) this.checkUserNameOk=true;
+                else this.checkUserNameOk=false;
+            },
+        },
+    });
+</script>
+</html>
